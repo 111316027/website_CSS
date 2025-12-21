@@ -153,7 +153,6 @@
             <section id="section1" class="p-5 mb-4 bg-white rounded-4 shadow-sm">
                 <div class="row align-items-center">
                     <div class="col-md-4 text-center mb-4 mb-md-0">
-                        <!-- 使用您上傳的個人圖片 -->
                         <img src="assets/images/Wagner1201.jpg" alt="Wagner 個人照" class="profile-img">
                     </div>
                     <div class="col-md-8">
@@ -200,14 +199,13 @@
             <section id="section4" class="mb-5">
                 <h2 class="section-title">影音作品展示</h2>
                 <div class="row g-4">
-                    <!-- 音樂作品 (已加入圖片) -->
+                    <!-- 音樂作品 (含封面圖) -->
                     <div class="col-12 col-lg-4">
                         <div class="card h-100 shadow-sm rounded-4 overflow-hidden bg-white">
                             <div class="p-4 pb-2">
                                 <h4 class="h5 fw-bold mb-0">音樂作品</h4>
                                 <span class="badge bg-info text-dark mb-3">錄音展示</span>
                             </div>
-                            <!-- 音樂封面圖片區塊 -->
                             <div class="ratio ratio-16x9">
                                 <img src="assets/images/image_large_a43dbf4c-9419-48ce-8d27-0ac18157f710.jpeg" alt="音樂封面" style="object-fit: cover;" onerror="this.src='https://via.placeholder.com/400x225?text=Music+Cover'">
                             </div>
@@ -235,15 +233,18 @@
                         </div>
                     </div>
 
-                    <!-- 期末作品：YouTube 影片 -->
+                    <!-- 期末作品：已改為檔案上傳模式 -->
                     <div class="col-md-6 col-lg-4">
                         <div class="card h-100 shadow-sm rounded-4 overflow-hidden border-primary border bg-white">
                             <div class="p-4 pb-2">
                                 <h4 class="h5 fw-bold mb-0">期末視訊作品</h4>
-                                <span class="badge bg-primary mb-3">YouTube 連結</span>
+                                <span class="badge bg-primary mb-3">本地檔案 (Video1201_Final.mp4)</span>
                             </div>
                             <div class="ratio ratio-16x9">
-                                <iframe src="https://youtu.be/NC2VPYN7nYw?si=XpHI9m5QxKgI_J_5" title="Final Project Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                <video controls class="bg-dark">
+                                    <source src="assets/video/Video1201_Final.mp4" type="video/mp4">
+                                    您的瀏覽器不支援影片標籤。
+                                </video>
                             </div>
                         </div>
                     </div>
@@ -285,7 +286,7 @@
         </footer>
     </div>
 
-    <!-- 遊戲邏輯腳本保持不變 -->
+    <!-- 遊戲邏輯腳本 -->
     <script>
         const canvas = document.getElementById('roadCanvas');
         const ctx = canvas.getContext('2d');
@@ -382,7 +383,6 @@
                 enemy.y += enemy.speed;
                 drawCarBody(enemy.x, enemy.y, enemy.w, enemy.h, enemy.color);
 
-                // 碰撞檢測
                 if (player.x < enemy.x + enemy.w - 5 && player.x + player.w > enemy.x + 5 &&
                     player.y < enemy.y + enemy.h - 5 && player.y + player.h > enemy.y + 5) {
                     gameState = 'OVER';
